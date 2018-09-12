@@ -1,7 +1,9 @@
 package com.example.shade.newsreader.ui.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,8 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.shade.newsreader.R;
 import com.example.shade.newsreader.data.network.model.Article;
+import com.example.shade.newsreader.ui.NewsDetails.view.NewsDetails;
 
 import java.util.List;
 
@@ -40,7 +44,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NewsViewHolder holder, int position)
+    public void onBindViewHolder(@NonNull NewsViewHolder holder, final int position)
     {
         holder.title.setText(news.get(position).getTitle());
         if(news.get(position).getSource().getName().equals(""))
@@ -48,9 +52,32 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         else
             holder.source.setText(news.get(position).getSource().getName());
 
-        Glide.with(holder.itemView)
-                .load(news.get(position).getUrlToImage())
-                .into(holder.imageView);
+        if(news.get(position).getUrlToImage()==null)
+        {
+            holder.imageView.setImageResource(R.drawable.errorimage);
+        }
+        else
+        {
+            Glide.with(holder.itemView)
+                    .load(news.get(position).getUrlToImage())
+                    .into(holder.imageView);
+
+        }
+
+        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(context, NewsDetails.class);
+                intent.putExtra("title",news.get(position).getTitle());
+                intent.putExtra("source",news.get(position).getSource().getName());
+                intent.putExtra("image",news.get(position).getUrlToImage());
+                intent.putExtra("link",news.get(position).getUrl());
+                intent.putExtra("published",news.get(position).getPublishedAt());
+                intent.putExtra("description",news.get(position).getDescription());
+                context.startActivity(intent);
+            }
+        });
+
 
         Log.d("resultis","in bind view succ");
 
@@ -65,12 +92,14 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     {
          TextView title, source;
          ImageView imageView;
+         ConstraintLayout constraintLayout;
 
         public NewsViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.articleTitle);
             source = (TextView) view.findViewById(R.id.articleSource);
             imageView=(ImageView) view.findViewById(R.id.articleImage);
+            constraintLayout=(ConstraintLayout) view.findViewById(R.id.viewholderConstraintLayout);
         }
     }
 }

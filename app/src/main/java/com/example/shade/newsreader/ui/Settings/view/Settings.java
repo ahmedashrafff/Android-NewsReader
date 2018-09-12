@@ -34,6 +34,10 @@ public class Settings extends AppCompatActivity implements SettingsView {
         setContentView(R.layout.activity_settings);
         settingsPresenter=new SettingsPresenter(this);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
         egypt = (ConstraintLayout)findViewById(R.id.egypt);
         france = (ConstraintLayout)findViewById(R.id.france);
         japan = (ConstraintLayout)findViewById(R.id.japan);

@@ -62,7 +62,6 @@ public class Home extends AppCompatActivity implements HomeView
         viewPager.setAdapter(pagerAdapter);
 
         navigationTabStrip.setTitles("Top News","Topics");
-        navigationTabStrip.setTabIndex(1, true);
         navigationTabStrip.setStripWeight(7);
         navigationTabStrip.setStripFactor(2);
         navigationTabStrip.setStripType(NavigationTabStrip.StripType.POINT);

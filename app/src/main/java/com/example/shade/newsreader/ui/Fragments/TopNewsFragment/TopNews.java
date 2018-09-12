@@ -46,7 +46,7 @@ public class TopNews extends Fragment implements TopNewsView
         String country = pref.getString("country", null);
 
         if(country==null)
-          topNewsPresenter.makeRequest("ar");
+          topNewsPresenter.makeRequest("eg");
         else
             topNewsPresenter.makeRequest(country);
 

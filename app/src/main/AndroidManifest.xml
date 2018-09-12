@@ -24,7 +24,21 @@
         <activity
             android:name=".ui.Settings.view.Settings"
             android:label="@string/title_activity_settings"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.shade.newsreader.ui.Home.view.Home"></meta-data>
+
+        </activity>
+
+        <activity android:name=".ui.NewsDetails.view.NewsDetails"
+            android:label="Article"
+            android:theme="@style/AppTheme"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.shade.newsreader.ui.Home.view.Home"></meta-data>
 
         </activity>
     </application>

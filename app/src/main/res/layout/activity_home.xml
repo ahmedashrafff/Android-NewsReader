@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="10dp"
+        android:paddingBottom="5dp"
         android:theme="@style/AppTheme.AppBarOverlay">
 
 
@@ -17,7 +18,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay"
 
             >
@@ -55,6 +56,22 @@
 
 
         </android.support.v7.widget.Toolbar>
+
+        <com.gigamole.navigationtabstrip.NavigationTabStrip
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
+            app:nts_active_color="@color/tabsSelectedTextColor"
+            app:nts_animation_duration="300"
+            app:nts_color="@color/tabsSelectedTextColor"
+            app:nts_corners_radius="1.5dp"
+            app:nts_factor="2.5"
+            app:nts_gravity="bottom"
+            app:nts_inactive_color="@color/tabsTextColor"
+            app:nts_size="13sp"
+            app:nts_type="point"
+            app:nts_weight="3dp" />
 
 
     </android.support.design.widget.AppBarLayout>
