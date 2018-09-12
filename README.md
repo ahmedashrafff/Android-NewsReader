@@ -15,18 +15,18 @@ Contains news from 7 topics ex:Health,Technology,Sports etc...
 
 ## Screenshots:
 <p float="left">
-<img src="Screenshots/Screenshot_2018-09-12-13-28-03.png"/>
-<img src="Screenshots/Screenshot_2018-09-12-13-27-49.png"/>
-<img src="Screenshots/Screenshot_2018-09-12-13-27-32.png"/>
-<img src="Screenshots/Screenshot_2018-09-12-13-27-22.png"/>
+<img src="Screenshots/Screenshot_2018-09-12-13-28-03.png" height="500"/>
+<img src="Screenshots/Screenshot_2018-09-12-13-27-49.png" height="500"/>
+<img src="Screenshots/Screenshot_2018-09-12-13-27-32.png" height="500"/>
+<img src="Screenshots/Screenshot_2018-09-12-13-27-22.png" height="500"/>
 </p>
 <br>
 <br>
 
 
 ## Technologies & Libraries Used:
-* Retrofit
-* Glide
+* [Retrofit](https://square.github.io/retrofit/)
+* [Glide](https://github.com/bumptech/glide)
 * [NewsAPi.org](https://newsapi.org)
 * [Android View Animations](https://github.com/daimajia/AndroidViewAnimations)
 * [Navigation Tap Strip](https://github.com/Devlight/NavigationTabStrip/tree/master/app/src/main)
